@@ -10,9 +10,10 @@ public class WordGuessingGame
 
     //construtor da classe
     public WordGuessingGame(){
-        this.hiddenWord = "";
-        this.guessedWord = "";
+        this.hiddenWord = "abc";
+        this.guessedWord = "---";
         this.numberOfTries = 0;
+        reader = new InputReader();
     }
 
     /*Selectores e Modificadores das variáveis*/
@@ -42,26 +43,54 @@ public class WordGuessingGame
     public void play()
     {
         showWelcome();
-        showGuessedWord();
-        guess();
+        while (guessedWord.equals(hiddenWord) != true)
+        {
+            showGuessedWord();
+            guess();
+        }
         showResult();
     }
 
     private void showWelcome()
     {
-        System.out.println("-----------------------------\n\n");
-        System.out.println("Welcome to word guessing game\n\n");
+        System.out.println("-----------------------------\n");
+        System.out.println("Bem vindo ao jogo da forca\n");
         System.out.println("-----------------------------\n\n");
     }
 
     private void guess()
     {
+        char guessedLetter = reader.getChar("Introduza uma letra: ");
+        StringBuilder stringBuilder = new StringBuilder(guessedWord);
 
+        for (int i = 0; i < hiddenWord.length(); i++)
+        {
+            if (guessedWord.charAt(i) != guessedLetter)
+            {
+                if (guessedLetter == hiddenWord.charAt(i))
+                {
+                    stringBuilder.setCharAt(i, guessedLetter);
+                    guessedWord = stringBuilder.toString();
+
+                    System.out.println("A letra " + guessedLetter + " está certa!" );
+                    return;
+                }
+            }
+            else
+            {
+                System.out.println("Essa letra já foi adivinhada!");
+                return;
+            }
+        }
+
+        System.out.println("A essa letra não está na palavra! ");
+        numberOfTries++;
     }
 
     private void showResult()
     {
-        System.out.println("Número de tentativas: " + numberOfTries);
+        System.out.println("A palavra foi adivinhada! A palavra era: " + hiddenWord);
+        System.out.println("Número de tentativas erradas: " + numberOfTries);
     }
 
     private void showGuessedWord()
