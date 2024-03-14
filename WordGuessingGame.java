@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class WordGuessingGame
 {
-    InputReader reader;
 
     private InputReader reader;
     private String hiddenWord;

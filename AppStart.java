@@ -1,6 +1,7 @@
 public class AppStart
 {
-    private WordGuessingGame game;
+    private static WordGuessingGame game;
+    
     public static void main(String[] args) {
         game = new WordGuessingGame();
 
