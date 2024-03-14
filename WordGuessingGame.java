@@ -67,7 +67,6 @@ public class WordGuessingGame
 
     private void showGuessedWord()
     {
-
-
+        System.out.println(guessedWord);
     }
 }
