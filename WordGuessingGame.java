@@ -42,12 +42,17 @@ public class WordGuessingGame
 
     public void play()
     {
-
+        showWelcome();
+        showGuessedWord();
+        guess();
+        showResult();
     }
 
     private void showWelcome()
     {
-
+        System.out.println("-----------------------------\n\n");
+        System.out.println("Welcome to word guessing game\n\n");
+        System.out.println("-----------------------------\n\n");
     }
 
     private void guess()
@@ -57,6 +62,12 @@ public class WordGuessingGame
 
     private void showResult()
     {
+        System.out.println("Número de tentativas: " + numberOfTries);
+    }
+
+    private void showGuessedWord()
+    {
+
 
     }
 }
