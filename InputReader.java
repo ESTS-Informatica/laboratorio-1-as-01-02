@@ -21,6 +21,7 @@ public class InputReader {
         }
 
         System.out.print(" > " + question);
+        System.out.println("Teste");
 
         char answer = reader.next().charAt(0);
         reader.nextLine();
