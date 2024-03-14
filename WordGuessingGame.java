@@ -40,7 +40,22 @@ public class WordGuessingGame
         this.numberOfTries  = newNumberOfTries;
     }
 
-    private void play()
+    public void play()
+    {
+
+    }
+
+    private void showWelcome()
+    {
+
+    }
+
+    private void guess()
+    {
+
+    }
+
+    private void showResult()
     {
 
     }
